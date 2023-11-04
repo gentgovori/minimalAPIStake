@@ -21,10 +21,10 @@ Content-Type: application/json
     "password": "123456789Aa#"
 }
 
-###Play the game 
+###To play the game, add the bearer token you get from the login request 
 POST {{gambling_HostAddress}}/gambleyourlifeaway
 Content-Type: application/json
-Authorization: Bearer CfDJ8Fn0WQsI6NJIsoQFtfqT-jWU6b0giQizcEEICnyhRVxn0ChkWo30bVCjXopC3HpgrgS5aY9TWeLsbNhsXSHPJgn2KtRCzUXJICT969dAxtBcLSZebE-Em4WmIRerk13KbGvSE3an1HK37BXjAav8EnHdpoPzSFDraV8D7Fjo0_ShzhhtWGdk10YVRFQT7-T3RRo5hATn6qhlRhL2bbC_PObRrs1HT1j4PzAauKtXPMDOBEBkNhQIrmMdy2XMLif9Bft5LTqFSPLaJGK-e8_9jTtenvmxp7fAAMuiT9fdImN98jjdNBEWG7KOaqdN8eFlyE5Cp7ttlckj8FrpnZ-VrjvzWj7Su5dTKLC6MnZS4x-mkWsXcwFJDo8yhC4ZPPbH4rG0eDi2FkVYl9Kca2rdFd84CXwtRbywKNBrViN-ZRqgywvhhEm-xCW7toB2xMEoql4C3nqagARZsMu4z90jVBLMRAqbVmEBBkLX7qGiSUmIFHHu0hXeaVHsyZHC8PcZg9-mT6hro3PT2MHNeixbXfT5U-7SLz2--Z-jo_4_0pctgzuR8saLLuBRZHpnQ98no4dFEpDVRldeMMf2OoR0qmuSzz2AF2bNw4MjkmjFZnpbqrR-De2E5EZmeFBZv_PiQO5JOfNJE61FLzfMcVT2-5X7pXIBKfvyUKFzjlaB5GEctWhSI9ZIMmLw0fniLulQtkIVifo6P8ijtbgyQGrTlK0
+Authorization: Bearer 
 
 {
     "points" : 100,

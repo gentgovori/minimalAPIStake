@@ -13,6 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+//better 
 builder.Services.AddProblemDetails();
 
 builder.Services.AddAuthentication()
@@ -40,7 +41,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 
-//map new identity endpoints
+//map new .NET 8 identity endpoints
 app.MapIdentityApi<MyUser>();
 
 
@@ -64,9 +65,10 @@ app.MapPost("/gambleyourlifeaway", async (ClaimsPrincipal claims, UserManager<My
                 return Results.ValidationProblem(validation.ToDictionary());
             }
 
-            
+
             //generate random thread-safe number
             var randomNumber = Random.Shared.Next(1, 9);
+
 
             //check if the the user has lost the stake
             if (stake.number != randomNumber)
@@ -82,6 +84,7 @@ app.MapPost("/gambleyourlifeaway", async (ClaimsPrincipal claims, UserManager<My
             await user.UpdateAsync(userDetails);
             return Results.Ok(new ApiResult { account = userDetails!.Balance, points = $"+{stake.points * 9}", status = Status.WON });
         }
+
         return Results.NoContent();
 
     }
