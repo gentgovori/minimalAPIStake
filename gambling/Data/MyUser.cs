@@ -6,6 +6,6 @@ namespace gambling.Data
     public class MyUser : IdentityUser
     {
         [Required]
-        public double Balance { get; set; }
+        public double Balance { get; set; } = 10000.0;
     }
 }

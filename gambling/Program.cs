@@ -20,7 +20,7 @@ builder.Services.AddAuthentication()
 
 builder.Services.AddAuthorizationBuilder();
 
-builder.Services.AddDbContext<AppDbContext>(x => x.UseSqlite("DataSource=db.db"));
+builder.Services.AddDbContext<AppDbContext>(x => x.UseInMemoryDatabase("AppDb"));
 
 builder.Services.Configure<RouteHandlerOptions>(options => options.ThrowOnBadRequest = true);
 
@@ -80,7 +80,7 @@ app.MapPost("/gambleyourlifeaway", async (ClaimsPrincipal claims, UserManager<My
             //user won the stake 
             userDetails!.Balance = userDetails.Balance + (stake.points * 9);
             await user.UpdateAsync(userDetails);
-            return Results.Ok(new ApiResult { account = userDetails!.Balance, points = $"+{stake.points}", status = Status.WON });
+            return Results.Ok(new ApiResult { account = userDetails!.Balance, points = $"+{stake.points * 9}", status = Status.WON });
         }
         return Results.NoContent();
 
