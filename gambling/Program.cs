@@ -13,7 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-//better 
+
 builder.Services.AddProblemDetails();
 
 builder.Services.AddAuthentication()
@@ -88,11 +88,11 @@ app.MapPost("/gambleyourlifeaway", async (ClaimsPrincipal claims, UserManager<My
         return Results.NoContent();
 
     }
-    catch (BadHttpRequestException ex)
+    catch (BadHttpRequestException)
     {
         //something went wrong
         //usually log the error and throw
-        throw;
+        throw new ArgumentNullException(nameof(stake));
     }
 
 
